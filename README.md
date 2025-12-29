@@ -1,38 +1,48 @@
 # ConSeisDiff: Conditional Seismic Diffusion
 
-[![Paper](https://img.shields.io/badge/Journal-Applied_Geophysics-blue)](https://doi.org/10.1016/j.jappgeo.2025.105956)
-[![License: Academic](https://img.shields.io/badge/License-Academic-green.svg)](#licensing)
+[![Journal](https://img.shields.io/badge/Journal-Applied_Geophysics-blue)](https://doi.org/10.1016/j.jappgeo.2025.105956)
+[![License: Academic](https://img.shields.io/badge/License-Academic-green.svg)](#license)
 [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](INSERT_YOUR_COLAB_LINK_HERE)
 
-**ConSeisDiff** is a conditional denoising diffusion probabilistic model (DDPM) designed for the generation of high-fidelity synthetic seismic data. By conditioning the generative process on structural priors such as **fault attributes** and **edge maps**, the model produces realistic 2D seismic images that maintain geological consistency.
+**ConSeisDiff** is a conditional denoising diffusion probabilistic model (DDPM) for high-fidelity synthetic seismic data generation. The framework explicitly conditions the diffusion process on geological structural priors—such as **fault attributes** and **edge-based structural maps**—to reduce the domain gap between synthetic and real seismic data while preserving reflector continuity and fault geometry.
 
-This repository contains the official implementation, training scripts, and an inference notebook as presented in our research published in the *Journal of Applied Geophysics*.
-
----
-
-## 🌟 Overview
-
-Generating labeled seismic data is a significant challenge in geophysics. **ConSeisDiff** addresses this by:
-* **Structural Conditioning:** Utilizing edge maps and fault attributes to guide the diffusion process.
-* **High-Resolution Synthesis:** Generating detailed 2D seismic textures that mimic real-world acquisition.
-* **Metric Evaluation:** Providing tools to calculate FID, SSIM, and other relevant geophysical metrics.
-
-## 📄 Publication
-
-The methodology and results are detailed in our peer-reviewed paper:
-> **"Conditional Diffusion Model for Generating Synthetic Seismic Data"** > *Journal of Applied Geophysics*, 2025.  
-> **DOI:** [10.1016/j.jappgeo.2025.105956](https://doi.org/10.1016/j.jappgeo.2025.105956)
+This repository provides the official implementation accompanying our peer-reviewed publication in the *Journal of Applied Geophysics*, including training scripts, inference pipelines, and evaluation utilities.
 
 ---
 
-## 🛠 Installation
+## Overview
 
-To set up the environment locally, ensure you have Python 3.8+ and install the required dependencies:
+Generating realistic and structurally consistent seismic data remains a major bottleneck for data-driven geophysical interpretation, particularly in fault detection and structural analysis. **ConSeisDiff** addresses this challenge through:
 
-```bash
-# Clone the repository
-git clone [https://github.com/YourUsername/ConSeisDiff.git](https://github.com/YourUsername/ConSeisDiff.git)
-cd ConSeisDiff
+- **Structure-Aware Conditioning**  
+  Incorporation of fault attributes and edge maps to guide the diffusion trajectory toward geologically plausible solutions.
 
-# Install dependencies
-pip install -r requirements.txt
+- **High-Fidelity Seismic Synthesis**  
+  Generation of realistic 2D seismic sections with preserved large-scale structure and fine-scale texture.
+
+- **Quantitative Evaluation**  
+  Built-in tools for evaluating synthetic quality using metrics such as FID, SSIM, and task-oriented fault detection performance.
+
+---
+
+## Publication
+
+If you use this work, please cite the following paper:
+
+> **ConSeisDiff: A Conditional Diffusion Approach to Mitigate Synthetic–Real Disparities in Seismic Fault Detection**  
+> *Journal of Applied Geophysics*, 243, 105956, 2025.  
+> DOI: https://doi.org/10.1016/j.jappgeo.2025.105956
+
+### BibTeX
+```bibtex
+@article{FARADY2025105956,
+  title   = {ConSeisDiff: A conditional diffusion approach to mitigate synthetic-real disparities in seismic fault detection},
+  journal = {Journal of Applied Geophysics},
+  volume  = {243},
+  pages   = {105956},
+  year    = {2025},
+  issn    = {0926-9851},
+  doi     = {https://doi.org/10.1016/j.jappgeo.2025.105956},
+  url     = {https://www.sciencedirect.com/science/article/pii/S0926985125003374},
+  author  = {Farady, Isack and Kuo, Chia-Chen and Sellami, Soufiene and Lin, Chih-Yang}
+}
